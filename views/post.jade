@@ -1,0 +1,38 @@
+include parts/head1
+meta(name='description', content='#{post.desc}')
+meta(name='keywords', content='#{post.tags}')
+title #{siteName}
+style !{post.css}
+include parts/head2
+#wrapper
+	#content.container
+		.row
+			include parts/nav
+			#main.col-sm-8.col-md-8.col-lg-9.p-y-3.p-x-3
+
+				.p-y-2
+				.post
+					h1 #{post.title}
+					hr
+					p.time
+						|by 
+						span.text-muted #{post.createBy.name}
+						|, at 
+						span.text-muted #{post.createTime}
+						|, in 
+						- var cats0 = post.cats
+						- for(var i = 0, len = cats0.length;i < len;i ++) {
+							- var cat0 = cats0[i]
+							- if(i)
+								|, 
+							a(href='#{createUrl(cat0, host, publicRoute.cat)}') #{cat0.name}
+
+						-	}
+
+					.p-y-1
+					#post-content !{post.html}
+				include parts/footer-html
+
+include parts/footer-js
+script !{post.script}
+include parts/footer-end

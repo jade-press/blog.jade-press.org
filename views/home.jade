@@ -1,0 +1,84 @@
+include parts/head1
+meta(name='description', content='#{siteDesc}')
+meta(name='keywords', content='#{siteKeywords}')
+title #{siteName}
+include parts/head2
+#wrapper
+	#content.container
+		.p-y-2.p-x-3
+
+			.text-xs-center
+				h1.display-3.p-y-3
+					span.icon-jadepress1
+					| jade-press
+				p.lead cms based on mongodb, nodejs, koa, vue and more
+				hr.m-y-2
+				p.lead
+					a.btn.btn-primary.btn-lg(href='https://github.com/jade-press/jade-press', role='button', rel='external nofollow', target='_blank')
+						span.icon-github-circled-alt2
+						| github
+			.p-y-2
+			p try it
+			pre.prettyprint.lang-bash.linenum(class='linenums:1').
+
+				#for mongodb driver ubuntu (optional)
+				#sudo apt-get install libkrb5-dev
+				#or visit https://github.com/mongodb/node-mongodb-native#troubleshooting for more
+
+				#for canvas ubuntu (optional)
+				#sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+				#visit https://www.npmjs.com/package/canvas for more platform
+
+				git clone git@github.com:jade-press/jade-press.git
+				cd jade-press
+				npm install
+				bower install
+				cp config-sample.js config.js
+
+				#then edit config.js yourself to config
+
+				#install plugins
+				gulp install
+
+				#run it
+				node app
+
+				#then visit http://127.0.0.1:7200 (if use default setting)
+
+
+
+			.p-y-2
+
+			h2 features
+			hr
+			ul.list-group
+				li.list-group-item based on mongodb(database and session), nodejs 4+, koa...
+				li.list-group-item built in jade(pug) editor
+				li.list-group-item file upload and insert
+				li.list-group-item custom routes
+				li.list-group-item plugin system
+				li.list-group-item theme system
+				li.list-group-item user system
+				li.list-group-item user groups and custom access control based on url
+				li.list-group-item post and category
+				li.list-group-item custom style & script for every post
+				li.list-group-item can be used as a module to extend
+
+			.p-y-2
+
+			h2 use jade-press as a example
+			hr
+			p
+				|visit 
+				a(href='https://github.com/jade-press/jade-press.org', rel='external nofollow', target='_blank') https://github.com/jade-press/jade-press.org 
+				| as a example
+
+
+			.p-y-3
+			.p-y-3
+			.p-y-3
+
+			include parts/footer-html
+
+include parts/footer-js
+include parts/footer-end

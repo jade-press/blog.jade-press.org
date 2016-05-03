@@ -1,0 +1,31 @@
+{
+  "name": "blog.jade-press.org",
+  "version": "0.0.1",
+  "homepage": "http://blog.jade-press.org",
+  "author": {
+    "email": "zxdong@gmail.com",
+    "name": "ZHAO Xudong",
+    "url": "http://html5beta.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jade-press/blog.jade-press.org"
+  },
+  "description": "blog site for jadepress",
+  "bugs": "https://github.com/zxdong262/blog.jade-press.org/issues",
+  "main": "app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "blog.jade-press.org",
+    "jade-press"
+  ],
+  "license": "MIT",
+  "ignore": [
+
+  ],
+  "dependencies": {
+    "jade-press": "*"
+  }
+}

@@ -1,0 +1,46 @@
+{
+	"name": "blog.jade-press.org"
+	,"version": "0.0.1"
+	,"description": "docs site for jadepress"
+	,"main": "index.js"
+	,"scripts": {
+		"test": "mocha"
+	}
+	,"repository": {
+		"type": "git"
+		,"url": "https://github.com/jade-press/blog.jade-press.org.git"
+	}
+	,"keywords": [
+		"blog.jade-press.org",
+		"jade-press"
+	]
+	,"author": {
+		"name": "ZHAO Xudong"
+		,"email": "zxdong@gmail.com"
+		,"url": "http://html5beta.com"
+	}
+	,"dependencies": {
+		"jade-press": "*"
+	}
+	,"devDependencies": {
+		"mocha": "2.4.5",
+    "gulp": "3.8.11",
+    "gulp-concat": "2.5.2",
+    "gulp-newer": "0.5.0",
+    "gulp-plumber": "1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "2.0.2",
+    "gulp-uglify": "1.2.0",
+    "gulp-util": "3.0.5",
+    "gulp-watch": "4.2.4",
+    "run-sequence": "*"
+  }
+  ,"engines": {
+    "node": "^5.8.0"
+  }
+	,"license": "MIT"
+	,"bugs": {
+		"url": "https://github.com/jade-press/blog.jade-press.org/issues"
+	}
+	,"homepage": "https://github.com/jade-press/blog.jade-press.org"
+}
