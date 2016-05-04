@@ -13,12 +13,16 @@ include parts/head2
 					| jade-press
 				p.lead cms based on mongodb, nodejs, koa, vue and more
 				hr.m-y-2
-				p.lead
-					a.btn.btn-primary.btn-lg(href='https://github.com/jade-press/jade-press', role='button', rel='external nofollow', target='_blank')
+				p.lead.btn-group
+					a.btn.btn-primary(href='https://github.com/jade-press/jade-press', role='button', rel='external nofollow', target='_blank')
 						span.icon-github-circled-alt2
 						| github
+					a.btn.btn-warning(href='https://github.com/jade-press/jade-press/releases', role='button', rel='external nofollow', target='_blank')
+						span.icon-download-cloud
+						| download
 			.p-y-2
-			p try it
+			h3.text-xs-center try it
+			hr
 			pre.prettyprint.lang-bash.linenum(class='linenums:1').
 
 				#for mongodb driver ubuntu (optional)
@@ -66,7 +70,7 @@ include parts/head2
 
 			.p-y-2
 
-			h2 use jade-press as a example
+			h2 use jade-press as a module
 			hr
 			p
 				|visit 
