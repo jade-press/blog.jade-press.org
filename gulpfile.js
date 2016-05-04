@@ -64,7 +64,7 @@ gulp.task('ugly', function() {
 
 gulp.task('watch',  function () {
 
-	watch(cssFolder, function() {
+	watch([cssFolder + '/*.styl', cssFolder + '/parts/*.styl'], function() {
 		runSequence('stylus')
 	})
 

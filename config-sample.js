@@ -3,7 +3,7 @@
 exports.init = {
 
 	//root user email, will be saved to database
-	email: 'zxdong@gmail.com'
+	email: 'admin@example.com'
 
 	//root user password, will be saved to database
 	//and you will be forced change password when first time login
@@ -41,13 +41,13 @@ exports.setting = {
 
 		//mongo session store url, 
 		//visit  https://docs.mongodb.org/manual/reference/connection-string/ for more info
-		url: 'mongodb://127.0.0.1:27017/sessions_jpo'
+		url: 'mongodb://127.0.0.1:27017/jadepress_org'
 
 	}
 
 	//secret used to code session and password
 	//change it
-	,secret: 'szdd345fef3dsdsgfer23dv1e'
+	,secret: 'szdd345fef3dsdsfer23dv1ebdasdl'
 
 	//mongodb url, 
 	//visit https://docs.mongodb.org/manual/reference/connection-string/ for more info
@@ -57,13 +57,13 @@ exports.setting = {
 	//theme
 	//can also be a object like:
 	//
-	
+	///*
 	,theme: {
 		path: __dirname
-		,name: 'jade-press-org'
-		,version: require('./package.json').version
+		,name: 'blog-jade-press'
+		,version: 'v0.1.0'
 	}
-	
+	//*/
 
 	//,theme: 'jadepress-theme-pi'
 
@@ -71,7 +71,7 @@ exports.setting = {
 	//make sure your theme is in plugins too
 	//plugins will be installed by run "gulp install"
 	,plugins: {
-
+		//"jadepress-theme-pi": "*"
 	}
 
 	//use public cdn or not
@@ -93,14 +93,14 @@ exports.setting = {
 	// or https://github.com/nodemailer/nodemailer-wellknown#supported-services
 	/*
 	,mailSender: {
-		name: 'xxxx'
-		,address: 'xxx@xxxx'
+		name: 'your-sender-name'
+		,address: 'your-id@gmail.com'
 	}
 	,mailServer: {
-		service: 'xxxx'
+		service: 'Gmail'
 		,auth: {
-			user: 'service@xxxx.xxxx'
-			,pass: 'xxxxxxx'
+			user: 'your-id@gmail.com'
+			,pass: 'your password'
 		}
 	}
 	*/

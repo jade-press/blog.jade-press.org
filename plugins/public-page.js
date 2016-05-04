@@ -22,24 +22,43 @@ local = ext.local
 ,pager = ext.pager
 ,getCats = ext.getCats
 ,getPosts = ext.getPosts
+,buildThemeRes = tools.buildThemeRes
 
 var extend = {}
-
-function buildThemeRes(host) {
-	return host + '/' + (setting.theme.name?setting.theme.name:setting.theme)
-}
 
 extend.home = function* (next) {
 
 	try {
 
+		let query = this.query
+		let page = query.page || 1
+		page = parseInt(page, 10) || 1
+		let pageSize = query.pageSize || setting.pageSize
+		pageSize = parseInt(pageSize, 10) || setting.pageSize
+
 		let user = this.session.user
 		this.local.user = user
+
+		let obj = yield getPosts({
+			page: page
+			,pageSize: pageSize
+		})
+
+		let pagerHtml = pager.render({
+			page: page
+			,pageSize: pageSize
+			,total: obj.total
+			,url: this.path
+		})
 
 		var objc = yield getCats()
 
 		Object.assign(this.local, {
-			themeRes: buildThemeRes(this.local.host)
+			pager: pagerHtml
+			,pageSize: pageSize
+			,total: obj.total
+			,posts: obj.posts
+			,themeRes: buildThemeRes(this.local.host)
 			,publicRoute: setting.publicRoute
 			,createUrl: tools.createUrl
 			,cats: objc.cats
@@ -52,7 +71,7 @@ extend.home = function* (next) {
 		err('failed render home page', e)
 		this.status = 500
 		this.local.error = e
-		this.render('views/page/500', this.local)
+		this.render(setting.path500, this.local)
 
 	}
 
@@ -90,7 +109,7 @@ extend.post = function* (next) {
 		err('failed render single post page', e)
 		this.status = 500
 		this.local.error = e
-		this.render('views/page/500', this.local)
+		this.render(setting.path500, this.local)
 
 	}
 
@@ -151,7 +170,7 @@ extend.cat = function* (next) {
 		err('failed render cat page', e)
 		this.status = 500
 		this.local.error = e
-		this.render('views/page/500', this.local)
+		this.render(setting.path500, this.local)
 
 	}
 
@@ -206,7 +225,7 @@ extend.search = function* (next) {
 		err('failed render cat page', e)
 		this.status = 500
 		this.local.error = e
-		this.render('views/page/500', this.local)
+		this.render(setting.path500, this.local)
 
 	}
 

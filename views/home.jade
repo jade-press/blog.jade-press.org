@@ -2,6 +2,10 @@ include parts/head1
 meta(name='description', content='#{siteDesc}')
 meta(name='keywords', content='#{siteKeywords}')
 title #{siteName}
+style.
+	#logo {
+		font-size: 260px;
+	}
 include parts/head2
 #wrapper
 	#content.container
@@ -9,8 +13,8 @@ include parts/head2
 
 			.text-xs-center
 				h1.display-3.p-y-3
-					span.icon-jadepress1
-					| jade-press
+					span#logo.icon-jadepress1
+						
 				p.lead cms based on mongodb, nodejs, koa, vue and more
 				hr.m-y-2
 				p.lead.btn-group
