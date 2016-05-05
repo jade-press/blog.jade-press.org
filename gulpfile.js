@@ -30,12 +30,12 @@ gulp.task('stylus', function() {
 
 	gulp.src(cssFolder + '/*.styl')
 		
-		.pipe(newer({
-			dest: cssFolder
-			,map: function(path) {
-				return path.replace(/\.styl$/, '.css')
-			}
-		}))
+		// .pipe(newer({
+		// 	dest: cssFolder
+		// 	,map: function(path) {
+		// 		return path.replace(/\.styl$/, '.css')
+		// 	}
+		// }))
 		.pipe(plumber())
 		.pipe(stylus(stylusOptions))
 		.pipe(gulp.dest(cssFolder))
