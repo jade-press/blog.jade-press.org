@@ -23,7 +23,7 @@ exports.local = {
 	,siteName: 'blog.jade-press.org'
 
 	//site desc, you should edit it
-	,siteDesc: 'jade-press is a cms based on mongodb, nodejs...'
+	,siteDesc: 'jade-press is a cms based on mongodb, nodejs, koa, vue...'
 
 	//site keywords, you should edit it
 	,siteKeywords: 'jade-press,nodejs,mongodb'
