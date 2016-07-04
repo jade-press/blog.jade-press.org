@@ -81,7 +81,7 @@ exports.setting = {
 	,publicRoute: {
 		home: '/'
 		,cat: '/cat/:slug'
-		,post: '/:catSlug/:slug'
+		,post: '/:catslug/:slug'
 	}
 
 	//access log switch

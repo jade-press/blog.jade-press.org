@@ -16,10 +16,9 @@ include parts/head2
 		.p-y-2.p-x-3
 
 			.text-xs-center
-				h1.display-3.p-y-3
+				h1
 					span#logo.icon-jadepress1
-						
-				p.lead cms based on mongodb, nodejs, koa, vue and more
+				p.lead <code>jade-press</code> is a cms based on mongodb, nodejs, koa, vue and more
 				hr.m-y-2
 				p.lead.btn-group
 					a.btn.btn-primary(href='https://github.com/jade-press/jade-press', role='button', rel='external nofollow', target='_blank')
@@ -31,15 +30,12 @@ include parts/head2
 			.p-y-2
 			h3.text-xs-center try it
 			hr
-			pre.prettyprint.lang-bash.linenum(class='linenums:1').
+			pre.prettyprint.lang-bash.
+				# make sure your mongodb running
+				# visit https://www.mongodb.com/download-center?jmp=nav#community for more info
 
-				#for mongodb driver ubuntu (optional)
-				#sudo apt-get install libkrb5-dev
-				#or visit https://github.com/mongodb/node-mongodb-native#troubleshooting for more
-
-				#for canvas ubuntu (optional)
-				#sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
-				#visit https://www.npmjs.com/package/canvas for more platform
+				# make sure cairo installed,
+				# visit https://github.com/Automattic/node-canvas/wiki/_pages for system spec
 
 				git clone git@github.com:jade-press/jade-press.git
 				cd jade-press
@@ -47,12 +43,12 @@ include parts/head2
 				bower install
 				cp config-sample.js config.js
 
-				#then edit config.js yourself to config
+				# read and edit config.js to define all the settings 
 
-				#install plugins
+				# install plugins if have plugins
 				gulp install
 
-				#run it
+				# run it
 				node app
 
 				#then visit http://127.0.0.1:7200 (if use default setting)
@@ -64,30 +60,80 @@ include parts/head2
 			h2 features
 			hr
 			ul
-				li.p-b-1 based on mongodb(database and session), nodejs 4+, koa...
+				li.p-b-1 based on mongodb(database and session), nodejs 5+, koa, vue...
 				li.p-b-1 built in jade(pug) editor
-				li.p-b-1 file upload and insert
+				li.p-b-1 file upload (to mongodb gridfs), insert, manage
 				li.p-b-1 custom routes
 				li.p-b-1 plugin system
 				li.p-b-1 theme system
 				li.p-b-1 user system
 				li.p-b-1 user groups and custom access control based on url
 				li.p-b-1 post and category
-				li.p-b-1 custom style & script for every post
+				li.p-b-1 custom style & script & features file/image for every post
 				li.p-b-1 can be used as a module to extend
 
 			.p-y-2
 
 			h2 use jade-press as a module
 			hr
+			pre.prettyprint.lang-javascript.
+				//config.js
+
+				//.... other setting
+				    ,theme: {
+				        path: __dirname
+				        ,name: 'your-name'
+				        ,version: 'xx.xx.xx'
+				    }
+				//.... other setting
+
+			pre.prettyprint.lang-javascript.
+				//app.js
+
+				/*!
+				 * main entrance
+				**/
+
+				'use strict'
+
+				let init = require('jade-press').init
+				,co = require('co')
+				,config = require('./config')
+
+				co(init(config))
+				.then(function(app) {
+				    let port = config.local.port
+				    app.listen(port, '127.0.0.1', function() {
+				        console.log('' + new Date(), config.local.siteName, 'runs on port', port)
+				    })
+				}, function(err) {
+				    console.error(err.stack || err)
+				})
+
+
 			p
-				|visit 
+				|example: 
 				a(href='https://github.com/jade-press/blog.jade-press.org', rel='external nofollow', target='_blank') https://github.com/jade-press/blog.jade-press.org 
-				| as a example
 
+			.p-y-2
+			h2 theme
+			hr
+			p
+				|example: 
+				a(href='https://github.com/jade-press/jadepress-theme-pi', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-theme-pi
 
-			.p-y-3
-			.p-y-3
+			.p-y-2
+			h2 plugin
+			hr
+			p
+				|example: 
+				a(href='https://github.com/jade-press/jadepress-plugin-qr', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-plugin-qr
+
+			.p-y-2
+			h2 license
+			hr
+			p MIT
+
 			.p-y-3
 
 			include parts/footer-html
