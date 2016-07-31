@@ -17,7 +17,7 @@ exports.local = {
 
 	port: 7400
 
-	,env: 'dev' //or 'production'
+	,env: process.env.NODE_ENV || 'dev'
 
 	//sitename, you should edit it
 	,siteName: 'blog.jade-press.org'
