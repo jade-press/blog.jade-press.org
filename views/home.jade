@@ -40,7 +40,6 @@ include parts/head2
 				git clone git@github.com:jade-press/jade-press.git
 				cd jade-press
 				npm install
-				bower install
 				cp config-sample.js config.js
 
 				# read and edit config.js to define all the settings 
@@ -52,8 +51,6 @@ include parts/head2
 				node app
 
 				#then visit http://127.0.0.1:7200 (if use default setting)
-
-
 
 			.p-y-2
 
@@ -71,6 +68,7 @@ include parts/head2
 				li.p-b-1 post and category
 				li.p-b-1 custom style & script & features file/image for every post
 				li.p-b-1 can be used as a module to extend
+				li.p-b-1 auto-database-update between different versions
 
 			.p-y-2
 
@@ -118,16 +116,26 @@ include parts/head2
 			.p-y-2
 			h2 theme
 			hr
-			p
-				|example: 
-				a(href='https://github.com/jade-press/jadepress-theme-pi', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-theme-pi
+			div check the examples:
+			ul
+				li
+					a(href='https://github.com/jade-press/jadepress-theme-pi', rel='external nofollow', target='_blank') basic theme: jadepress-theme-pi
+				li
+					a(href='https://github.com/jade-press/jadepress-react-spa', rel='external nofollow', target='_blank') react spa theme(react, redux, history api)
+				li
+					a(href='https://github.com/jade-press/jadepress-vue-spa', rel='external nofollow', target='_blank') vue spa theme(vue1.x, vuex, vue-router)
 
 			.p-y-2
 			h2 plugin
 			hr
-			p
-				|example: 
-				a(href='https://github.com/jade-press/jadepress-plugin-qr', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-plugin-qr
+			div check the examples:
+			ul
+				li
+					a(href='https://github.com/jade-press/jadepress-plugin-qr', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-plugin-qr
+				li
+					a(href='https://github.com/jade-press/jadepress-redis', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-redis
+				li
+					a(href='https://github.com/jade-press/jadepress-static', rel='external nofollow', target='_blank') https://github.com/jade-press/jadepress-static
 
 			.p-y-2
 			h2 license

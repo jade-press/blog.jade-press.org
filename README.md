@@ -15,7 +15,6 @@ code of [blog.jade-press.org](http://blog.jade-press.org)
 git clone https://github.com/jade-press/blog.jade-press.org.git
 cd blog.jade-press.org
 npm install
-bower install
 cp config-sample.js config.js
 
 #read and edit config.js to define all the settings 
