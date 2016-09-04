@@ -10,8 +10,19 @@ style.
 	#logo:before {
 		margin: 0;
 	}
+	.bg-faded {
+		background: none;
+	}
 include parts/head2
 #wrapper
+	nav.navbar.navbar-light.bg-faded
+		ul.nav.navbar-nav.pull-xs-right.m-x-2
+			li.nav-item.active
+				a.nav-link(href='#{host}') Home
+			li.nav-item
+				a.nav-link(href='#{host}/cat/default') Posts
+			li.nav-item
+				a.nav-link(href='#{host}/login') Login
 	#content.container
 		.p-y-2.p-x-3
 
